@@ -18,9 +18,17 @@ function writePassword() {
 
     // var spec = confirm("Would you like to include lowercase characters?");
 
+    var pass = "";
+    numPass = function() {
+      for (var i = 0; i<=char; i++){
+        pass = pass.padEnd(i, Math.floor(Math.random()*10));
+      }
+      // var num = Math.floor(Math.random()*10);
+      return(pass);
+    }
 
-
-    var pass = Math.floor(Math.random()*10);
+    numPass();
+    // var num = Math.floor(Math.random()*10);
     // var pass = "";
     // for (i=0; i<26; i++) {
     //   var newPass = pass.padEnd(char, alpha[i]);
