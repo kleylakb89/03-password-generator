@@ -27,7 +27,13 @@ function writePassword() {
       return(pass);
     }
 
-    numPass();
+    console.log(alpha[Math.floor(Math.random()*10)]);
+
+    lowerCharPass = function() {
+      
+    }
+
+    // numPass();
     // var num = Math.floor(Math.random()*10);
     // var pass = "";
     // for (i=0; i<26; i++) {
