@@ -169,6 +169,16 @@ function writePassword() {
       upSpecPass();
     } else if (lower == false && upper == false && numeric == true && spec == true) {
       numSpecPass();
+    } else if (lower == true && upper == true && numeric == true && spec == false) {
+      numLowUpPass();
+    } else if (lower == true && upper == true && numeric == false && spec == true) {
+      lowUpSpecPass();
+    } else if (lower == true && upper == false && numeric == true && spec == true) {
+      numLowSpecPass();
+    } else if (lower == false && upper == true && numeric == true && spec == true) {
+      numUpSpecPass();
+    } else {
+      numLowUpSpecPass();
     }
 
     return(pass);
