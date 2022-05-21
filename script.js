@@ -141,6 +141,8 @@ function writePassword() {
     } else if (char > 129) {
       alert("Password must be under 129 characters.");
     }
+    
+    // TO DO: Debug char not in range
 
     var lower = confirm("Would you like to include lowercase characters?");
     var upper = confirm("Would you like to include uppercase characters?");
@@ -179,6 +181,15 @@ function writePassword() {
       numUpSpecPass();
     } else {
       numLowUpSpecPass();
+    }
+
+    // TO DO: Debug all chars included
+    experiment = function() {
+      var numLower = numList.concat(alpha);
+      for (var i = 0; i<=char; i++){
+        pass = pass.padEnd(i, numLower[Math.floor(Math.random()*36)]);
+      }
+      return(pass);
     }
 
     return(pass);
