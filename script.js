@@ -132,6 +132,8 @@ function writePassword() {
       return(pass);
     }
 
+
+
     var char = prompt("How many characters would you like your password to contain?");
 
     if (char < 8) {
@@ -140,7 +142,15 @@ function writePassword() {
       alert("Password must be under 129 characters.");
     }
 
-    // var spec = confirm("Would you like to include lowercase characters?");
+    var lower = confirm("Would you like to include lowercase characters?");
+    var upper = confirm("Would you like to include uppercase characters?");
+    var numeric = confirm("Would you like to include numeric characters?");
+    var spec = confirm("Would you like to include special characters?");
+
+    if (lower != true && upper != true && numeric != true && spec != true) {
+      alert("Password must contain at least one type of character.");
+    }
+
 
     numLowUpSpecPass();
     
