@@ -157,6 +157,18 @@ function writePassword() {
       numPass();
     } else if (lower == false && upper == false && numeric == false && spec == true) {
       specPass();
+    } else if (lower == true && upper == true && numeric == false && spec == false) {
+      lowUpPass();
+    } else if (lower == true && upper == false && numeric == true && spec == false) {
+      numLowPass();
+    } else if (lower == true && upper == false && numeric == false && spec == true) {
+      lowSpecPass();
+    } else if (lower == false && upper == true && numeric == true && spec == false) {
+      numUpPass();
+    } else if (lower == false && upper == true && numeric == false && spec == true) {
+      upSpecPass();
+    } else if (lower == false && upper == false && numeric == true && spec == true) {
+      numSpecPass();
     }
 
     return(pass);
