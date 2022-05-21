@@ -100,6 +100,30 @@ function writePassword() {
       return(pass);
     }
 
+    numLowSpecPass = function() {
+      var numLowSpec = numList.concat(alpha, special);
+      for (var i = 0; i<=char; i++){
+        pass = pass.padEnd(i, numLowSpec[Math.floor(Math.random()*65)]);
+      }
+      return(pass);
+    }
+
+    numUpSpecPass = function() {
+      var numUpSpec = numList.concat(upAlpha, special);
+      for (var i = 0; i<=char; i++){
+        pass = pass.padEnd(i, numUpSpec[Math.floor(Math.random()*65)]);
+      }
+      return(pass);
+    }
+
+    lowUpSpecPass = function() {
+      var lowUpSpec = alpha.concat(upAlpha, special);
+      for (var i = 0; i<=char; i++){
+        pass = pass.padEnd(i, lowUpSpec[Math.floor(Math.random()*81)]);
+      }
+      return(pass);
+    }
+
     var char = prompt("How many characters would you like your password to contain?");
 
     if (char < 8) {
@@ -110,7 +134,7 @@ function writePassword() {
 
     // var spec = confirm("Would you like to include lowercase characters?");
 
-    numLowUpPass();
+    lowUpSpecPass();
     
     return(pass);
   }
