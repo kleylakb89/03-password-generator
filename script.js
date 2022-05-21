@@ -6,7 +6,9 @@ function writePassword() {
 
   generatePassword = function() {
 
-    var alpha = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+    var alpha = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
+    var upAlpha = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
     var char = prompt("How many characters would you like your password to contain?");
 
@@ -27,8 +29,6 @@ function writePassword() {
       return(pass);
     }
 
-    // console.log(alpha[Math.floor(Math.random()*10)]);
-
     lowerCharPass = function() {
       for (var i = 0; i<=char; i++) {
         pass = pass.padEnd(i, alpha[Math.floor(Math.random()*10)]);
@@ -36,7 +36,14 @@ function writePassword() {
       return(pass);
     }
 
-    lowerCharPass();
+    upperCharPass = function() {
+      for (var i = 0; i<=char; i++) {
+        pass = pass.padEnd(i, upAlpha[Math.floor(Math.random()*10)]);
+      }
+      return(pass);
+    }
+
+    upperCharPass();
     // numPass();
     // var num = Math.floor(Math.random()*10);
     // var pass = "";
