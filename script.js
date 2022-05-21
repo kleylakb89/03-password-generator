@@ -27,12 +27,16 @@ function writePassword() {
       return(pass);
     }
 
-    console.log(alpha[Math.floor(Math.random()*10)]);
+    // console.log(alpha[Math.floor(Math.random()*10)]);
 
     lowerCharPass = function() {
-      
+      for (var i = 0; i<=char; i++) {
+        pass = pass.padEnd(i, alpha[Math.floor(Math.random()*10)]);
+      }
+      return(pass);
     }
 
+    lowerCharPass();
     // numPass();
     // var num = Math.floor(Math.random()*10);
     // var pass = "";
