@@ -23,21 +23,21 @@ function writePassword() {
       return(pass);
     }
 
-    lowerCharPass = function() {
+    lowerPass = function() {
       for (var i = 0; i<=char; i++) {
         pass = pass.padEnd(i, alpha[Math.floor(Math.random()*26)]);
       }
       return(pass);
     }
 
-    upperCharPass = function() {
+    upperPass = function() {
       for (var i = 0; i<=char; i++) {
         pass = pass.padEnd(i, upAlpha[Math.floor(Math.random()*26)]);
       }
       return(pass);
     }
 
-    specialPass = function() {
+    specPass = function() {
       for (var i = 0; i<=char; i++) {
         pass = pass.padEnd(i, special[Math.floor(Math.random()*29)]);
       }
@@ -147,13 +147,18 @@ function writePassword() {
     var numeric = confirm("Would you like to include numeric characters?");
     var spec = confirm("Would you like to include special characters?");
 
-    if (lower != true && upper != true && numeric != true && spec != true) {
+    if (lower == false && upper == false && numeric == false && spec == false) {
       alert("Password must contain at least one type of character.");
+    } else if (lower == true && upper == false && numeric == false && spec == false) {
+      lowerPass();
+    } else if (lower == false && upper == true && numeric == false && spec == false) {
+      upperPass();
+    } else if (lower == false && upper == false && numeric == true && spec == false) {
+      numPass();
+    } else if (lower == false && upper == false && numeric == false && spec == true) {
+      specPass();
     }
 
-
-    numLowUpSpecPass();
-    
     return(pass);
   }
 
