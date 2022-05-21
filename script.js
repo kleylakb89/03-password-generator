@@ -10,6 +10,8 @@ function writePassword() {
 
     var upAlpha = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
+    var special = ["!", "#", "$", "%", "&", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"];
+
     var char = prompt("How many characters would you like your password to contain?");
 
     if (char < 8) {
@@ -43,7 +45,14 @@ function writePassword() {
       return(pass);
     }
 
-    upperCharPass();
+    specialPass = function() {
+      for (var i = 0; i<=char; i++) {
+        pass = pass.padEnd(i, special[Math.floor(Math.random()*10)]);
+      }
+      return(pass);
+    }
+
+    specialPass();
     // numPass();
     // var num = Math.floor(Math.random()*10);
     // var pass = "";
