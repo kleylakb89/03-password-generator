@@ -92,6 +92,14 @@ function writePassword() {
       return(pass);
     }
 
+    numLowUpPass = function() {
+      var numLowUp = numList.concat(alpha, upAlpha);
+      for (var i = 0; i<=char; i++){
+        pass = pass.padEnd(i, numLowUp[Math.floor(Math.random()*62)]);
+      }
+      return(pass);
+    }
+
     var char = prompt("How many characters would you like your password to contain?");
 
     if (char < 8) {
@@ -102,7 +110,7 @@ function writePassword() {
 
     // var spec = confirm("Would you like to include lowercase characters?");
 
-    upSpecPass();
+    numLowUpPass();
     
     return(pass);
   }
