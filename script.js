@@ -8,6 +8,8 @@ function writePassword() {
 
     var pass = "";
 
+    var numList = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+
     var alpha = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
     var upAlpha = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
@@ -23,21 +25,37 @@ function writePassword() {
 
     lowerCharPass = function() {
       for (var i = 0; i<=char; i++) {
-        pass = pass.padEnd(i, alpha[Math.floor(Math.random()*10)]);
+        pass = pass.padEnd(i, alpha[Math.floor(Math.random()*26)]);
       }
       return(pass);
     }
 
     upperCharPass = function() {
       for (var i = 0; i<=char; i++) {
-        pass = pass.padEnd(i, upAlpha[Math.floor(Math.random()*10)]);
+        pass = pass.padEnd(i, upAlpha[Math.floor(Math.random()*26)]);
       }
       return(pass);
     }
 
     specialPass = function() {
       for (var i = 0; i<=char; i++) {
-        pass = pass.padEnd(i, special[Math.floor(Math.random()*10)]);
+        pass = pass.padEnd(i, special[Math.floor(Math.random()*29)]);
+      }
+      return(pass);
+    }
+
+    numLowPass = function() {
+      var numLower = numList.concat(alpha);
+      for (var i = 0; i<=char; i++){
+        pass = pass.padEnd(i, numLower[Math.floor(Math.random()*36)]);
+      }
+      return(pass);
+    }
+
+    numUpPass = function() {
+      var numUpper = numList.concat(upAlpha);
+      for (var i = 0; i<=char; i++){
+        pass = pass.padEnd(i, numUpper[Math.floor(Math.random()*36)]);
       }
       return(pass);
     }
@@ -52,7 +70,7 @@ function writePassword() {
 
     // var spec = confirm("Would you like to include lowercase characters?");
 
-    specialPass();
+    numUpPass();
     
     return(pass);
   }
