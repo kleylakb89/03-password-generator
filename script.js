@@ -250,6 +250,7 @@ function writePassword() {
       });
     }
 
+    // Checks if alpha array elements are included in pass
     checkAlpha = function() {
       var bool = "";
       for (var i = 0; i < char; i++) {
@@ -267,8 +268,62 @@ function writePassword() {
       }
     } 
 
+    // Checks if upAlpha array elements are included in pass
+    checkUpAlpha = function() {
+      var bool = "";
+      for (var i = 0; i < char; i++) {
+        if (upAlpha.includes(pass[i]) === true) {
+          console.log(pass[i]);
+          bool = true;
+        } else if (upAlpha.includes(pass[i]) === false) {
+          console.log(pass[i]);
+        }
+      }
+      if (bool === true) {
+        return(bool);
+      } else {
+        return(false);
+      }
+    } 
+
+    // Checks if numList array elements are included in pass
+    checkNumList = function() {
+      var bool = "";
+      for (var i = 0; i < char; i++) {
+        if (numList.includes(pass[i]) === true) {
+          console.log(pass[i]);
+          bool = true;
+        } else if (numList.includes(pass[i]) === false) {
+          console.log(pass[i]);
+        }
+      }
+      if (bool === true) {
+        return(bool);
+      } else {
+        return(false);
+      }
+    }
+
+    // Checks if special array elements are included in pass
+    checkSpecial = function() {
+      var bool = "";
+      for (var i = 0; i < char; i++) {
+        if (special.includes(pass[i]) === true) {
+          console.log(pass[i]);
+          bool = true;
+        } else if (special.includes(pass[i]) === false) {
+          console.log(pass[i]);
+        }
+      }
+      if (bool === true) {
+        return(bool);
+      } else {
+        return(false);
+      }
+    }
+
     exp2();
-    var checking = checkAlpha();
+    var checking = checkSpecial();
     console.log(checking);
 
     // exp2();
