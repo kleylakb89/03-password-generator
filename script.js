@@ -170,6 +170,11 @@ function writePassword() {
     }
 
     var char = charPrompt();
+
+    if (char === undefined) {
+      return ("Try again");
+    }
+
     var lower = askLower();
     var upper = askUpper();
     var numeric = askNum();
