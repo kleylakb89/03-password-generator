@@ -230,10 +230,24 @@ function writePassword() {
       return(pass);
     }
 
-    console.log(alpha.some(experiment));
-    console.log(numList.some(experiment));
+    exp2 = function() {
+      var numLowUpSpec = numList.concat(alpha, upAlpha, special);
+      for (var i = 0; i<=char; i++){
+        pass = pass.padEnd(i, numLowUpSpec[Math.floor(Math.random()*91)]);
+       }
+      return(pass);
+    }
 
-    pass = experiment();
+    // if (alpha.some(exp2) === false || numList.some(exp2) === false || upAlpha.some(exp2) === false || special.some(exp2) === false) {
+    //   exp2();
+    // };
+
+    do {
+      exp2();
+      console.log(pass);
+    } while (alpha.some(exp2) === false || numList.some(exp2) === false || upAlpha.some(exp2) === false || special.some(exp2) === false);
+
+    // console.log(numList.some(experiment));
 
     return(pass);
   }
