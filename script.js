@@ -250,17 +250,37 @@ function writePassword() {
       });
     }
 
-    
+    checkAlpha = function() {
+      var bool = "";
+      for (var i = 0; i < char; i++) {
+        if (alpha.includes(pass[i]) === true) {
+          console.log(pass[i]);
+          bool = true;
+        } else if (alpha.includes(pass[i]) === false) {
+          console.log(pass[i]);
+        }
+      }
+      if (bool === true) {
+        return(bool);
+      } else {
+        return(false);
+      }
+    } 
+
     exp2();
-    var test = exp4(special, pass);
-    if(test === true) {
-      console.log("Yes");
-    } else if(test === false) {
-      console.log("No");
-    } else {
-      console.log("Problem");
-    };
-    console.log(pass.substring(0));
+    var checking = checkAlpha();
+    console.log(checking);
+
+    // exp2();
+    // var test = exp4(special, pass);
+    // if(test === true) {
+    //   console.log("Yes");
+    // } else if(test === false) {
+    //   console.log("No");
+    // } else {
+    //   console.log("Problem");
+    // };
+    // console.log(pass.substring(0));
 
     // if (alpha.some(exp2) === false || numList.some(exp2) === false || upAlpha.some(exp2) === false || special.some(exp2) === false) {
     //   exp2();
