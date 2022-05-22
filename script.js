@@ -132,15 +132,26 @@ function writePassword() {
       return(pass);
     }
 
+    charPrompt = function() {
+      var char = prompt("How many characters would you like your password to contain?");
 
-
-    var char = prompt("How many characters would you like your password to contain?");
-
-    if (char < 8) {
-      alert("Password must be at least 8 characters.");
-    } else if (char > 129) {
-      alert("Password must be under 129 characters.");
+      if (char < 8) {
+        alert("Password must be at least 8 characters.");
+        return;
+      } else if (char > 129) {
+        alert("Password must be under 129 characters.");
+        return;
+      } else if (typeof char != Number) {
+        alert("Input must be an integer.");
+        return;
+      }
+      return(char);
     }
+
+
+
+    charPrompt();
+    
     
     // TO DO: Debug char not in range
 
