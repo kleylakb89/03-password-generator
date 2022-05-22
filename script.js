@@ -132,10 +132,10 @@ function writePassword() {
       return(pass);
     }
 
-    charPrompt = function() {
+    char = function() {
       var char = prompt("How many characters would you like your password to contain?");
-      charInt = parseInt(char);
 
+      // Checking if input is an integer between 7 and 129
       if (char % parseInt(char) !== 0) {
         alert("Input must be an integer.");
         return;
@@ -149,7 +149,7 @@ function writePassword() {
       return(char);
     }
 
-    askLower = function() {
+    lower = function() {
       var lower = confirm("Would you like to include lowercase characters?");
       return(lower);
     }
@@ -169,8 +169,8 @@ function writePassword() {
       return(spec);
     }
 
-    charPrompt();
-    // askLower();
+    char();
+    lower();
     // askUpper();
     // askNum();
     // askSpec();
