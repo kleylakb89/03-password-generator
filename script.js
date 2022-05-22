@@ -169,62 +169,70 @@ function writePassword() {
       return(spec);
     }
 
+    makePass = function() {
+      
+    }
+
     var char = charPrompt();
 
     if (char === undefined) {
       return ("Try again");
     }
 
-    var lower = askLower();
-    var upper = askUpper();
-    var numeric = askNum();
-    var spec = askSpec();
+    // var lower = askLower();
+    // var upper = askUpper();
+    // var numeric = askNum();
+    // var spec = askSpec();
     
-    
-    // TO DO: Debug char not in range
-
-    if (lower == false && upper == false && numeric == false && spec == false) {
-      alert("Password must contain at least one type of character.");
-    } else if (lower == true && upper == false && numeric == false && spec == false) {
-      lowerPass();
-    } else if (lower == false && upper == true && numeric == false && spec == false) {
-      upperPass();
-    } else if (lower == false && upper == false && numeric == true && spec == false) {
-      numPass();
-    } else if (lower == false && upper == false && numeric == false && spec == true) {
-      specPass();
-    } else if (lower == true && upper == true && numeric == false && spec == false) {
-      lowUpPass();
-    } else if (lower == true && upper == false && numeric == true && spec == false) {
-      numLowPass();
-    } else if (lower == true && upper == false && numeric == false && spec == true) {
-      lowSpecPass();
-    } else if (lower == false && upper == true && numeric == true && spec == false) {
-      numUpPass();
-    } else if (lower == false && upper == true && numeric == false && spec == true) {
-      upSpecPass();
-    } else if (lower == false && upper == false && numeric == true && spec == true) {
-      numSpecPass();
-    } else if (lower == true && upper == true && numeric == true && spec == false) {
-      numLowUpPass();
-    } else if (lower == true && upper == true && numeric == false && spec == true) {
-      lowUpSpecPass();
-    } else if (lower == true && upper == false && numeric == true && spec == true) {
-      numLowSpecPass();
-    } else if (lower == false && upper == true && numeric == true && spec == true) {
-      numUpSpecPass();
-    } else {
-      numLowUpSpecPass();
-    }
+    // if (lower == false && upper == false && numeric == false && spec == false) {
+    //   alert("Password must contain at least one type of character.");
+    // } else if (lower == true && upper == false && numeric == false && spec == false) {
+    //   lowerPass();
+    // } else if (lower == false && upper == true && numeric == false && spec == false) {
+    //   upperPass();
+    // } else if (lower == false && upper == false && numeric == true && spec == false) {
+    //   numPass();
+    // } else if (lower == false && upper == false && numeric == false && spec == true) {
+    //   specPass();
+    // } else if (lower == true && upper == true && numeric == false && spec == false) {
+    //   lowUpPass();
+    // } else if (lower == true && upper == false && numeric == true && spec == false) {
+    //   numLowPass();
+    // } else if (lower == true && upper == false && numeric == false && spec == true) {
+    //   lowSpecPass();
+    // } else if (lower == false && upper == true && numeric == true && spec == false) {
+    //   numUpPass();
+    // } else if (lower == false && upper == true && numeric == false && spec == true) {
+    //   upSpecPass();
+    // } else if (lower == false && upper == false && numeric == true && spec == true) {
+    //   numSpecPass();
+    // } else if (lower == true && upper == true && numeric == true && spec == false) {
+    //   numLowUpPass();
+    // } else if (lower == true && upper == true && numeric == false && spec == true) {
+    //   lowUpSpecPass();
+    // } else if (lower == true && upper == false && numeric == true && spec == true) {
+    //   numLowSpecPass();
+    // } else if (lower == false && upper == true && numeric == true && spec == true) {
+    //   numUpSpecPass();
+    // } else {
+    //   numLowUpSpecPass();
+    // }
 
     // TO DO: Debug all chars included
     experiment = function() {
       var numLower = numList.concat(alpha);
       for (var i = 0; i<=char; i++){
         pass = pass.padEnd(i, numLower[Math.floor(Math.random()*36)]);
+        // pass = pass.padEnd(i, numList[Math.floor(Math.random()*10)]);
+        // pass = pass.padEnd(i, alpha[Math.floor(Math.random()*26)]);
       }
+      // console.log(alpha.some(pass));
+      // console.log(numList.some(pass));
+      console.log(numLower.some(pass));
       return(pass);
     }
+
+    pass = experiment();
 
     return(pass);
   }
