@@ -134,31 +134,49 @@ function writePassword() {
 
     charPrompt = function() {
       var char = prompt("How many characters would you like your password to contain?");
+      charInt = parseInt(char);
 
-      if (char < 8) {
+      if (char % parseInt(char) !== 0) {
+        alert("Input must be an integer.");
+        return;
+      } else if (char < 8) {
         alert("Password must be at least 8 characters.");
         return;
       } else if (char > 129) {
         alert("Password must be under 129 characters.");
         return;
-      } else if (typeof char != Number) {
-        alert("Input must be an integer.");
-        return;
       }
       return(char);
     }
 
+    askLower = function() {
+      var lower = confirm("Would you like to include lowercase characters?");
+      return(lower);
+    }
 
+    askUpper = function() {
+      var upper = confirm("Would you like to include uppercase characters?");
+      return(upper);
+    }
+
+    askNum = function() {
+      var numeric = confirm("Would you like to include numeric characters?");
+      return(numeric);
+    }
+
+    askSpec = function() {
+      var spec = confirm("Would you like to include special characters?");
+      return(spec);
+    }
 
     charPrompt();
+    // askLower();
+    // askUpper();
+    // askNum();
+    // askSpec();
     
     
     // TO DO: Debug char not in range
-
-    var lower = confirm("Would you like to include lowercase characters?");
-    var upper = confirm("Would you like to include uppercase characters?");
-    var numeric = confirm("Would you like to include numeric characters?");
-    var spec = confirm("Would you like to include special characters?");
 
     if (lower == false && upper == false && numeric == false && spec == false) {
       alert("Password must contain at least one type of character.");
