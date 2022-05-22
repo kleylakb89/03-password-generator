@@ -223,14 +223,15 @@ function writePassword() {
       var numLower = numList.concat(alpha);
       for (var i = 0; i<=char; i++){
         pass = pass.padEnd(i, numLower[Math.floor(Math.random()*36)]);
-        // pass = pass.padEnd(i, numList[Math.floor(Math.random()*10)]);
-        // pass = pass.padEnd(i, alpha[Math.floor(Math.random()*26)]);
       }
       // console.log(alpha.some(pass));
       // console.log(numList.some(pass));
-      console.log(numLower.some(pass));
+      // console.log(alpha.some(pass));
       return(pass);
     }
+
+    console.log(alpha.some(experiment));
+    console.log(numList.some(experiment));
 
     pass = experiment();
 
