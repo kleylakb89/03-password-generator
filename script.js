@@ -238,14 +238,28 @@ function writePassword() {
       return(pass);
     }
 
+    exp3 = function() {
+      var check = pass;
+      return(check);
+    }
+
     // if (alpha.some(exp2) === false || numList.some(exp2) === false || upAlpha.some(exp2) === false || special.some(exp2) === false) {
     //   exp2();
     // };
 
-    do {
-      exp2();
-      console.log(pass);
-    } while (alpha.some(exp2) === false || numList.some(exp2) === false || upAlpha.some(exp2) === false || special.some(exp2) === false);
+    // do {
+    //   exp2();
+    //   console.log(pass);
+    // } while (alpha.some(exp2) === false || numList.some(exp2) === false || upAlpha.some(exp2) === false || special.some(exp2) === false);
+
+
+    exp2();
+    console.log(pass);
+    console.log(alpha.some(exp3));
+    console.log(numList.some(exp3));
+    console.log(upAlpha.some(exp3));
+    console.log(special.some(exp3));
+
 
     // console.log(numList.some(experiment));
 
@@ -258,7 +272,7 @@ function writePassword() {
   
 
   passwordText.value = password;
-  console.log(password);
+  // console.log(password);
 
 }
 
