@@ -251,8 +251,15 @@ function writePassword() {
     }
 
     exp2();
-    exp4(special, pass);
+    var test = exp4(special, pass);
     console.log(pass);
+    if(test === true) {
+      console.log("Yes");
+    } else if(test === false) {
+      console.log("No");
+    } else {
+      console.log("Problem");
+    };
 
     // if (alpha.some(exp2) === false || numList.some(exp2) === false || upAlpha.some(exp2) === false || special.some(exp2) === false) {
     //   exp2();
