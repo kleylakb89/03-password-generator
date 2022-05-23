@@ -26,5 +26,10 @@ Clicking the Generate Password button will prompt for desired character length. 
 
 ## Visuals
 
+The page after displaying a randomized password.
+![Deployed Password Generator](password-generator.png)
+
 ## Resources
 
+- [Live Site](https://kleylakb89.github.io/03-password-generator/)
+- [Repository](https://github.com/kleylakb89/03-password-generator)
