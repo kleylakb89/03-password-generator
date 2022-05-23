@@ -4,7 +4,7 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 function writePassword() {
 
-  generatePassword = function() {
+  generatePassword = function () {
 
     var pass = "";
 
@@ -16,123 +16,123 @@ function writePassword() {
 
     var special = ["!", "#", "$", "%", "&", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"];
 
-    numPass = function() {
-      for (var i = 0; i<=char; i++){
-        pass = pass.padEnd(i, Math.floor(Math.random()*10));
+    numPass = function () {
+      for (var i = 0; i <= char; i++) {
+        pass = pass.padEnd(i, Math.floor(Math.random() * 10));
       }
-      return(pass);
+      return (pass);
     }
 
-    lowerPass = function() {
-      for (var i = 0; i<=char; i++) {
-        pass = pass.padEnd(i, alpha[Math.floor(Math.random()*26)]);
+    lowerPass = function () {
+      for (var i = 0; i <= char; i++) {
+        pass = pass.padEnd(i, alpha[Math.floor(Math.random() * 26)]);
       }
-      return(pass);
+      return (pass);
     }
 
-    upperPass = function() {
-      for (var i = 0; i<=char; i++) {
-        pass = pass.padEnd(i, upAlpha[Math.floor(Math.random()*26)]);
+    upperPass = function () {
+      for (var i = 0; i <= char; i++) {
+        pass = pass.padEnd(i, upAlpha[Math.floor(Math.random() * 26)]);
       }
-      return(pass);
+      return (pass);
     }
 
-    specPass = function() {
-      for (var i = 0; i<=char; i++) {
-        pass = pass.padEnd(i, special[Math.floor(Math.random()*29)]);
+    specPass = function () {
+      for (var i = 0; i <= char; i++) {
+        pass = pass.padEnd(i, special[Math.floor(Math.random() * 29)]);
       }
-      return(pass);
+      return (pass);
     }
 
-    numLowPass = function() {
+    numLowPass = function () {
       var numLower = numList.concat(alpha);
-      for (var i = 0; i<=char; i++){
-        pass = pass.padEnd(i, numLower[Math.floor(Math.random()*36)]);
+      for (var i = 0; i <= char; i++) {
+        pass = pass.padEnd(i, numLower[Math.floor(Math.random() * 36)]);
       }
-      return(pass);
+      return (pass);
     }
 
-    numUpPass = function() {
+    numUpPass = function () {
       var numUpper = numList.concat(upAlpha);
-      for (var i = 0; i<=char; i++){
-        pass = pass.padEnd(i, numUpper[Math.floor(Math.random()*36)]);
+      for (var i = 0; i <= char; i++) {
+        pass = pass.padEnd(i, numUpper[Math.floor(Math.random() * 36)]);
       }
-      return(pass);
+      return (pass);
     }
 
-    numSpecPass = function() {
+    numSpecPass = function () {
       var numSpec = numList.concat(special);
-      for (var i = 0; i<=char; i++){
-        pass = pass.padEnd(i, numSpec[Math.floor(Math.random()*39)]);
+      for (var i = 0; i <= char; i++) {
+        pass = pass.padEnd(i, numSpec[Math.floor(Math.random() * 39)]);
       }
-      return(pass);
+      return (pass);
     }
 
-    lowUpPass = function() {
+    lowUpPass = function () {
       var lowUp = alpha.concat(upAlpha);
-      for (var i = 0; i<=char; i++){
-        pass = pass.padEnd(i, lowUp[Math.floor(Math.random()*52)]);
+      for (var i = 0; i <= char; i++) {
+        pass = pass.padEnd(i, lowUp[Math.floor(Math.random() * 52)]);
       }
-      return(pass);
+      return (pass);
     }
 
-    lowSpecPass = function() {
+    lowSpecPass = function () {
       var lowSpec = alpha.concat(special);
-      for (var i = 0; i<=char; i++){
-        pass = pass.padEnd(i, lowSpec[Math.floor(Math.random()*55)]);
+      for (var i = 0; i <= char; i++) {
+        pass = pass.padEnd(i, lowSpec[Math.floor(Math.random() * 55)]);
       }
-      return(pass);
+      return (pass);
     }
 
-    upSpecPass = function() {
+    upSpecPass = function () {
       var upSpec = upAlpha.concat(special);
-      for (var i = 0; i<=char; i++){
-        pass = pass.padEnd(i, upSpec[Math.floor(Math.random()*55)]);
+      for (var i = 0; i <= char; i++) {
+        pass = pass.padEnd(i, upSpec[Math.floor(Math.random() * 55)]);
       }
-      return(pass);
+      return (pass);
     }
 
-    numLowUpPass = function() {
+    numLowUpPass = function () {
       var numLowUp = numList.concat(alpha, upAlpha);
-      for (var i = 0; i<=char; i++){
-        pass = pass.padEnd(i, numLowUp[Math.floor(Math.random()*62)]);
+      for (var i = 0; i <= char; i++) {
+        pass = pass.padEnd(i, numLowUp[Math.floor(Math.random() * 62)]);
       }
-      return(pass);
+      return (pass);
     }
 
-    numLowSpecPass = function() {
+    numLowSpecPass = function () {
       var numLowSpec = numList.concat(alpha, special);
-      for (var i = 0; i<=char; i++){
-        pass = pass.padEnd(i, numLowSpec[Math.floor(Math.random()*65)]);
+      for (var i = 0; i <= char; i++) {
+        pass = pass.padEnd(i, numLowSpec[Math.floor(Math.random() * 65)]);
       }
-      return(pass);
+      return (pass);
     }
 
-    numUpSpecPass = function() {
+    numUpSpecPass = function () {
       var numUpSpec = numList.concat(upAlpha, special);
-      for (var i = 0; i<=char; i++){
-        pass = pass.padEnd(i, numUpSpec[Math.floor(Math.random()*65)]);
+      for (var i = 0; i <= char; i++) {
+        pass = pass.padEnd(i, numUpSpec[Math.floor(Math.random() * 65)]);
       }
-      return(pass);
+      return (pass);
     }
 
-    lowUpSpecPass = function() {
+    lowUpSpecPass = function () {
       var lowUpSpec = alpha.concat(upAlpha, special);
-      for (var i = 0; i<=char; i++){
-        pass = pass.padEnd(i, lowUpSpec[Math.floor(Math.random()*81)]);
+      for (var i = 0; i <= char; i++) {
+        pass = pass.padEnd(i, lowUpSpec[Math.floor(Math.random() * 81)]);
       }
-      return(pass);
+      return (pass);
     }
 
-    numLowUpSpecPass = function() {
+    numLowUpSpecPass = function () {
       var numLowUpSpec = numList.concat(alpha, upAlpha, special);
-      for (var i = 0; i<=char; i++){
-        pass = pass.padEnd(i, numLowUpSpec[Math.floor(Math.random()*91)]);
+      for (var i = 0; i <= char; i++) {
+        pass = pass.padEnd(i, numLowUpSpec[Math.floor(Math.random() * 91)]);
       }
-      return(pass);
+      return (pass);
     }
 
-    charPrompt = function() {
+    charPrompt = function () {
       var char = prompt("How many characters would you like your password to contain?");
 
       // Checking if input is an integer between 7 and 129
@@ -146,112 +146,31 @@ function writePassword() {
         alert("Password must be under 129 characters.");
         return;
       }
-      return(char);
+      return (char);
     }
 
-    askLower = function() {
+    askLower = function () {
       var lower = confirm("Would you like to include lowercase characters?");
-      return(lower);
+      return (lower);
     }
 
-    askUpper = function() {
+    askUpper = function () {
       var upper = confirm("Would you like to include uppercase characters?");
-      return(upper);
+      return (upper);
     }
 
-    askNum = function() {
+    askNum = function () {
       var numeric = confirm("Would you like to include numeric characters?");
-      return(numeric);
+      return (numeric);
     }
 
-    askSpec = function() {
+    askSpec = function () {
       var spec = confirm("Would you like to include special characters?");
-      return(spec);
-    }
-
-    makePass = function() {
-      
-    }
-
-    var char = charPrompt();
-
-    if (char === undefined) {
-      return ("Try again");
-    }
-
-    // var lower = askLower();
-    // var upper = askUpper();
-    // var numeric = askNum();
-    // var spec = askSpec();
-    
-    // if (lower == false && upper == false && numeric == false && spec == false) {
-    //   alert("Password must contain at least one type of character.");
-    // } else if (lower == true && upper == false && numeric == false && spec == false) {
-    //   lowerPass();
-    // } else if (lower == false && upper == true && numeric == false && spec == false) {
-    //   upperPass();
-    // } else if (lower == false && upper == false && numeric == true && spec == false) {
-    //   numPass();
-    // } else if (lower == false && upper == false && numeric == false && spec == true) {
-    //   specPass();
-    // } else if (lower == true && upper == true && numeric == false && spec == false) {
-    //   lowUpPass();
-    // } else if (lower == true && upper == false && numeric == true && spec == false) {
-    //   numLowPass();
-    // } else if (lower == true && upper == false && numeric == false && spec == true) {
-    //   lowSpecPass();
-    // } else if (lower == false && upper == true && numeric == true && spec == false) {
-    //   numUpPass();
-    // } else if (lower == false && upper == true && numeric == false && spec == true) {
-    //   upSpecPass();
-    // } else if (lower == false && upper == false && numeric == true && spec == true) {
-    //   numSpecPass();
-    // } else if (lower == true && upper == true && numeric == true && spec == false) {
-    //   numLowUpPass();
-    // } else if (lower == true && upper == true && numeric == false && spec == true) {
-    //   lowUpSpecPass();
-    // } else if (lower == true && upper == false && numeric == true && spec == true) {
-    //   numLowSpecPass();
-    // } else if (lower == false && upper == true && numeric == true && spec == true) {
-    //   numUpSpecPass();
-    // } else {
-    //   numLowUpSpecPass();
-    // }
-
-    // TO DO: Debug all chars included
-    experiment = function() {
-      var numLower = numList.concat(alpha);
-      for (var i = 0; i<=char; i++){
-        pass = pass.padEnd(i, numLower[Math.floor(Math.random()*36)]);
-      }
-      // console.log(alpha.some(pass));
-      // console.log(numList.some(pass));
-      // console.log(alpha.some(pass));
-      return(pass);
-    }
-
-    exp2 = function() {
-      var numLowUpSpec = numList.concat(alpha, upAlpha, special);
-      for (var i = 0; i<=char; i++){
-        pass = pass.padEnd(i, numLowUpSpec[Math.floor(Math.random()*91)]);
-       }
-      return(pass);
-    }
-
-    exp3 = function() {
-      var check = pass;
-      return(check);
-    }
-
-    exp4 = function(array, pass) {
-      return array.some(function(check) {
-        console.log(pass, check);
-        return(pass.substring(0) === check);
-      });
+      return (spec);
     }
 
     // Checks if alpha array elements are included in pass
-    checkAlpha = function() {
+    checkAlpha = function () {
       var bool = "";
       for (var i = 0; i < char; i++) {
         if (alpha.includes(pass[i]) === true) {
@@ -262,14 +181,14 @@ function writePassword() {
         }
       }
       if (bool === true) {
-        return(bool);
+        return (bool);
       } else {
-        return(false);
+        return (false);
       }
-    } 
+    }
 
     // Checks if upAlpha array elements are included in pass
-    checkUpAlpha = function() {
+    checkUpAlpha = function () {
       var bool = "";
       for (var i = 0; i < char; i++) {
         if (upAlpha.includes(pass[i]) === true) {
@@ -280,14 +199,14 @@ function writePassword() {
         }
       }
       if (bool === true) {
-        return(bool);
+        return (bool);
       } else {
-        return(false);
+        return (false);
       }
-    } 
+    }
 
     // Checks if numList array elements are included in pass
-    checkNumList = function() {
+    checkNumList = function () {
       var bool = "";
       for (var i = 0; i < char; i++) {
         if (numList.includes(pass[i]) === true) {
@@ -298,14 +217,14 @@ function writePassword() {
         }
       }
       if (bool === true) {
-        return(bool);
+        return (bool);
       } else {
-        return(false);
+        return (false);
       }
     }
 
     // Checks if special array elements are included in pass
-    checkSpecial = function() {
+    checkSpecial = function () {
       var bool = "";
       for (var i = 0; i < char; i++) {
         if (special.includes(pass[i]) === true) {
@@ -316,15 +235,106 @@ function writePassword() {
         }
       }
       if (bool === true) {
-        return(bool);
+        return (bool);
       } else {
-        return(false);
+        return (false);
       }
     }
 
-    exp2();
-    var checking = checkSpecial();
-    console.log(checking);
+    runChecks = function() {
+      if (lower == false && upper == false && numeric == false && spec == false) {
+        alert("Password must contain at least one type of character.");
+        return("Try again");
+      } else if (lower == true && upper == false && numeric == false && spec == false) {
+        return (lowerPass());
+      } else if (lower == false && upper == true && numeric == false && spec == false) {
+        return (upperPass());
+      } else if (lower == false && upper == false && numeric == true && spec == false) {
+        return (numPass());
+      } else if (lower == false && upper == false && numeric == false && spec == true) {
+        return (specPass());
+      } else if (lower == true && upper == true && numeric == false && spec == false) {
+        do {
+          lowUpPass();
+          checkAlpha();
+          checkUpAlpha();
+          console.log(pass);
+        } while (checkAlpha === false || checkUpAlpha === false);
+        return(pass);
+      } else if (lower == true && upper == false && numeric == true && spec == false) {
+        numLowPass();
+      } else if (lower == true && upper == false && numeric == false && spec == true) {
+        lowSpecPass();
+      } else if (lower == false && upper == true && numeric == true && spec == false) {
+        numUpPass();
+      } else if (lower == false && upper == true && numeric == false && spec == true) {
+        upSpecPass();
+      } else if (lower == false && upper == false && numeric == true && spec == true) {
+        numSpecPass();
+      } else if (lower == true && upper == true && numeric == true && spec == false) {
+        numLowUpPass();
+      } else if (lower == true && upper == true && numeric == false && spec == true) {
+        lowUpSpecPass();
+      } else if (lower == true && upper == false && numeric == true && spec == true) {
+        numLowSpecPass();
+      } else if (lower == false && upper == true && numeric == true && spec == true) {
+        numUpSpecPass();
+      } else {
+        numLowUpSpecPass();
+      }
+    }
+
+    var char = charPrompt();
+
+    if (char === undefined) {
+      return ("Try again");
+    }
+
+    var lower = askLower();
+    var upper = askUpper();
+    var numeric = askNum();
+    var spec = askSpec();
+
+    pass = runChecks();
+
+
+    // TO DO: Debug all chars included
+    // experiment = function () {
+    //   var numLower = numList.concat(alpha);
+    //   for (var i = 0; i <= char; i++) {
+    //     pass = pass.padEnd(i, numLower[Math.floor(Math.random() * 36)]);
+    //   }
+    //   // console.log(alpha.some(pass));
+    //   // console.log(numList.some(pass));
+    //   // console.log(alpha.some(pass));
+    //   return (pass);
+    // }
+
+    // exp2 = function () {
+    //   var numLowUpSpec = numList.concat(alpha, upAlpha, special);
+    //   for (var i = 0; i <= char; i++) {
+    //     pass = pass.padEnd(i, numLowUpSpec[Math.floor(Math.random() * 91)]);
+    //   }
+    //   return (pass);
+    // }
+
+    // exp3 = function () {
+    //   var check = pass;
+    //   return (check);
+    // }
+
+    // exp4 = function (array, pass) {
+    //   return array.some(function (check) {
+    //     console.log(pass, check);
+    //     return (pass.substring(0) === check);
+    //   });
+    // }
+
+
+
+    // exp2();
+    // var checking = checkSpecial();
+    // console.log(checking);
 
     // exp2();
     // var test = exp4(special, pass);
@@ -357,13 +367,13 @@ function writePassword() {
 
     // console.log(numList.some(experiment));
 
-    return(pass);
+    return (pass);
   }
 
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  
+
 
   passwordText.value = password;
   // console.log(password);
