@@ -281,11 +281,8 @@ function writePassword() {
         do {
           pass = "";
           numLowPass();
-          console.log(pass);
           var chAl = checkAlpha();
-          console.log(chAl);
           var chNum = checkNumList();
-          console.log(chNum);
         } while (chAl === false || chNum === false);
         return(pass);
         // lowercase and special characters password
@@ -293,11 +290,8 @@ function writePassword() {
         do {
           pass = "";
           lowSpecPass();
-          console.log(pass);
           var chAl = checkAlpha();
-          console.log(chAl);
           var chSp = checkSpecial();
-          console.log(chSp);
         } while (chAl === false || chSp === false);
         return(pass);
         // uppercase and numeral password
@@ -305,11 +299,8 @@ function writePassword() {
         do {
           pass = "";
           numUpPass();
-          console.log(pass);
           var chUpAl = checkUpAlpha();
-          console.log(chUpAl);
           var chNum = checkNumList();
-          console.log(chNum);
         } while (chUpAl === false || chNum === false);
         return(pass);
         // uppercase and special characters password
@@ -317,11 +308,8 @@ function writePassword() {
         do {
           pass = "";
           upSpecPass();
-          console.log(pass);
           var chUpAl = checkUpAlpha();
-          console.log(chUpAl);
           var chSp = checkSpecial();
-          console.log(chSp);
         } while (chUpAl === false || chSp === false);
         return(pass);
         // numeral and special characters password
@@ -329,11 +317,8 @@ function writePassword() {
         do {
           pass = "";
           numSpecPass();
-          console.log(pass);
           var chNum = checkNumList();
-          console.log(chNum);
           var chSp = checkSpecial();
-          console.log(chSp);
         } while (chNum === false || chSp === false);
         return(pass);
         // lowercase, uppercase, and numeric password
@@ -341,13 +326,9 @@ function writePassword() {
         do {
           pass = "";
           numLowUpPass();
-          console.log(pass);
           var chAl = checkAlpha();
-          console.log(chAl);
           var chUpAl = checkUpAlpha();
-          console.log(chUpAl);
           var chNum = checkNumList();
-          console.log(chNum);
         } while (chAl === false || chUpAl === false || chNum === false);
         return(pass);
         // lowercase, uppercase, and special characters password
@@ -355,13 +336,9 @@ function writePassword() {
         do {
           pass = "";
           lowUpSpecPass();
-          console.log(pass);
           var chAl = checkAlpha();
-          console.log(chAl);
           var chUpAl = checkUpAlpha();
-          console.log(chUpAl);
           var chSp = checkSpecial();
-          console.log(chSp);
         } while (chAl === false || chUpAl === false || chSp === false);
         return(pass);
         // lowercase, numeric, and special characters password
@@ -369,13 +346,9 @@ function writePassword() {
         do {
           pass = "";
           numLowSpecPass();
-          console.log(pass);
           var chAl = checkAlpha();
-          console.log(chAl);
           var chNum = checkNumList();
-          console.log(chNum);
           var chSp = checkSpecial();
-          console.log(chSp);
         } while (chAl === false || chNum === false || chSp === false);
         return(pass);
         // uppercase, numeric, and special characters password
@@ -383,13 +356,9 @@ function writePassword() {
         do {
           pass = "";
           numUpSpecPass();
-          console.log(pass);
           var chUpAl = checkUpAlpha();
-          console.log(chUpAl);
           var chNum = checkNumList();
-          console.log(chNum);
           var chSp = checkSpecial();
-          console.log(chSp);
         } while (chUpAl === false || chNum === false || chSp === false);
         return(pass);
         // all four elements password
@@ -397,33 +366,33 @@ function writePassword() {
         do {
           pass = "";
           numLowUpSpecPass();
-          console.log(pass);
           var chAl = checkAlpha();
-          console.log(chAl);
           var chUpAl = checkUpAlpha();
-          console.log(chUpAl);
           var chNum = checkNumList();
-          console.log(chNum);
           var chSp = checkSpecial();
-          console.log(chSp);
         } while (chAl === false || chUpAl === false || chNum === false || chSp === false);
         return(pass);
       }
     }
 
+    // runs charPrompt and saves result
     var char = charPrompt();
 
+    // if char isn't an integer between 7 and 129, exits function
     if (char === undefined) {
       return ("Try again");
     }
 
+    // runs functions to confirm desired password elements
     var lower = askLower();
     var upper = askUpper();
     var numeric = askNum();
     var spec = askSpec();
 
+    // compiles password based on desired elements and loops until all are properly included
     pass = runChecks();
 
+    // returns password and exits function
     return (pass);
   }
 
@@ -433,8 +402,6 @@ function writePassword() {
 
 
   passwordText.value = password;
-  // console.log(password);
-
 }
 
 // Add event listener to generate button
