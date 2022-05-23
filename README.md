@@ -15,6 +15,7 @@ JavaScript functionality includes:
 
 - prompting for character length of password
 - requiring integer password between 7 and 129 characters
+- outputs "Try again" if choices do not meet minimum criteria
 - confirming desired elements in password: lowercase, uppercase, numerical, and/or special characters
 - requiring at least one type of element
 - randomizing password based on desired elements
