@@ -126,6 +126,7 @@ function writePassword() {
 
     numLowUpSpecPass = function () {
       var numLowUpSpec = numList.concat(alpha, upAlpha, special);
+      pass = "";
       for (var i = 0; i <= char; i++) {
         pass = pass.padEnd(i, numLowUpSpec[Math.floor(Math.random() * 91)]);
       }
@@ -174,10 +175,7 @@ function writePassword() {
       var bool = "";
       for (var i = 0; i < char; i++) {
         if (alpha.includes(pass[i]) === true) {
-          console.log(pass[i]);
           bool = true;
-        } else if (alpha.includes(pass[i]) === false) {
-          console.log(pass[i]);
         }
       }
       if (bool === true) {
@@ -192,10 +190,7 @@ function writePassword() {
       var bool = "";
       for (var i = 0; i < char; i++) {
         if (upAlpha.includes(pass[i]) === true) {
-          console.log(pass[i]);
           bool = true;
-        } else if (upAlpha.includes(pass[i]) === false) {
-          console.log(pass[i]);
         }
       }
       if (bool === true) {
@@ -210,10 +205,7 @@ function writePassword() {
       var bool = "";
       for (var i = 0; i < char; i++) {
         if (numList.includes(pass[i]) === true) {
-          console.log(pass[i]);
           bool = true;
-        } else if (numList.includes(pass[i]) === false) {
-          console.log(pass[i]);
         }
       }
       if (bool === true) {
@@ -228,10 +220,7 @@ function writePassword() {
       var bool = "";
       for (var i = 0; i < char; i++) {
         if (special.includes(pass[i]) === true) {
-          console.log(pass[i]);
           bool = true;
-        } else if (special.includes(pass[i]) === false) {
-          console.log(pass[i]);
         }
       }
       if (bool === true) {
@@ -280,7 +269,19 @@ function writePassword() {
       } else if (lower == false && upper == true && numeric == true && spec == true) {
         numUpSpecPass();
       } else {
-        numLowUpSpecPass();
+        do {
+          numLowUpSpecPass();
+          console.log(pass);
+          var chAl = checkAlpha();
+          console.log(chAl);
+          var chUpAl = checkUpAlpha();
+          console.log(chUpAl);
+          var chNum = checkNumList();
+          console.log(chNum);
+          var chSp = checkSpecial();
+          console.log(chSp);
+        } while (chAl === false || chUpAl === false || chNum === false || chSp === false);
+        return(pass);
       }
     }
 
