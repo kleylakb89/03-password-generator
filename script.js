@@ -126,7 +126,6 @@ function writePassword() {
 
     numLowUpSpecPass = function () {
       var numLowUpSpec = numList.concat(alpha, upAlpha, special);
-      pass = "";
       for (var i = 0; i <= char; i++) {
         pass = pass.padEnd(i, numLowUpSpec[Math.floor(Math.random() * 91)]);
       }
@@ -244,32 +243,122 @@ function writePassword() {
         return (specPass());
       } else if (lower == true && upper == true && numeric == false && spec == false) {
         do {
+          pass = "";
           lowUpPass();
-          checkAlpha();
-          checkUpAlpha();
-          console.log(pass);
-        } while (checkAlpha === false || checkUpAlpha === false);
+          var chAl = checkAlpha();
+          var chUpAl = checkUpAlpha();
+        } while (chAl === false || chUpAl === false);
         return(pass);
       } else if (lower == true && upper == false && numeric == true && spec == false) {
-        numLowPass();
+        do {
+          pass = "";
+          numLowPass();
+          console.log(pass);
+          var chAl = checkAlpha();
+          console.log(chAl);
+          var chNum = checkNumList();
+          console.log(chNum);
+        } while (chAl === false || chNum === false);
+        return(pass);
       } else if (lower == true && upper == false && numeric == false && spec == true) {
-        lowSpecPass();
+        do {
+          pass = "";
+          lowSpecPass();
+          console.log(pass);
+          var chAl = checkAlpha();
+          console.log(chAl);
+          var chSp = checkSpecial();
+          console.log(chSp);
+        } while (chAl === false || chSp === false);
+        return(pass);
       } else if (lower == false && upper == true && numeric == true && spec == false) {
-        numUpPass();
+        do {
+          pass = "";
+          numUpPass();
+          console.log(pass);
+          var chUpAl = checkUpAlpha();
+          console.log(chUpAl);
+          var chNum = checkNumList();
+          console.log(chNum);
+        } while (chUpAl === false || chNum === false);
+        return(pass);
       } else if (lower == false && upper == true && numeric == false && spec == true) {
-        upSpecPass();
+        do {
+          pass = "";
+          upSpecPass();
+          console.log(pass);
+          var chUpAl = checkUpAlpha();
+          console.log(chUpAl);
+          var chSp = checkSpecial();
+          console.log(chSp);
+        } while (chUpAl === false || chSp === false);
+        return(pass);
       } else if (lower == false && upper == false && numeric == true && spec == true) {
-        numSpecPass();
+        do {
+          pass = "";
+          numSpecPass();
+          console.log(pass);
+          var chNum = checkNumList();
+          console.log(chNum);
+          var chSp = checkSpecial();
+          console.log(chSp);
+        } while (chNum === false || chSp === false);
+        return(pass);
       } else if (lower == true && upper == true && numeric == true && spec == false) {
-        numLowUpPass();
+        do {
+          pass = "";
+          numLowUpPass();
+          console.log(pass);
+          var chAl = checkAlpha();
+          console.log(chAl);
+          var chUpAl = checkUpAlpha();
+          console.log(chUpAl);
+          var chNum = checkNumList();
+          console.log(chNum);
+        } while (chAl === false || chUpAl === false || chNum === false);
+        return(pass);
       } else if (lower == true && upper == true && numeric == false && spec == true) {
-        lowUpSpecPass();
+        do {
+          pass = "";
+          lowUpSpecPass();
+          console.log(pass);
+          var chAl = checkAlpha();
+          console.log(chAl);
+          var chUpAl = checkUpAlpha();
+          console.log(chUpAl);
+          var chSp = checkSpecial();
+          console.log(chSp);
+        } while (chAl === false || chUpAl === false || chSp === false);
+        return(pass);
       } else if (lower == true && upper == false && numeric == true && spec == true) {
-        numLowSpecPass();
+        do {
+          pass = "";
+          numLowSpecPass();
+          console.log(pass);
+          var chAl = checkAlpha();
+          console.log(chAl);
+          var chNum = checkNumList();
+          console.log(chNum);
+          var chSp = checkSpecial();
+          console.log(chSp);
+        } while (chAl === false || chNum === false || chSp === false);
+        return(pass);
       } else if (lower == false && upper == true && numeric == true && spec == true) {
-        numUpSpecPass();
+        do {
+          pass = "";
+          numUpSpecPass();
+          console.log(pass);
+          var chUpAl = checkUpAlpha();
+          console.log(chUpAl);
+          var chNum = checkNumList();
+          console.log(chNum);
+          var chSp = checkSpecial();
+          console.log(chSp);
+        } while (chUpAl === false || chNum === false || chSp === false);
+        return(pass);
       } else {
         do {
+          pass = "";
           numLowUpSpecPass();
           console.log(pass);
           var chAl = checkAlpha();
