@@ -6,6 +6,7 @@ function writePassword() {
 
   generatePassword = function () {
 
+    // set up universal variables to be called on in function. pass will become the final function return. numList, alpha, upAlpha, and special are all arrays that will be combined depending on user input.
     var pass = "";
 
     var numList = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
@@ -16,6 +17,7 @@ function writePassword() {
 
     var special = ["!", "#", "$", "%", "&", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"];
 
+    // creates a randomized password of only numbers that meets the char length
     numPass = function () {
       for (var i = 0; i <= char; i++) {
         pass = pass.padEnd(i, Math.floor(Math.random() * 10));
@@ -23,6 +25,7 @@ function writePassword() {
       return (pass);
     }
 
+    // creates a randomized password of only lowercase letters that meets the char length
     lowerPass = function () {
       for (var i = 0; i <= char; i++) {
         pass = pass.padEnd(i, alpha[Math.floor(Math.random() * 26)]);
@@ -30,6 +33,7 @@ function writePassword() {
       return (pass);
     }
 
+    // creates a randomized password of only uppercase letters that meets the char length
     upperPass = function () {
       for (var i = 0; i <= char; i++) {
         pass = pass.padEnd(i, upAlpha[Math.floor(Math.random() * 26)]);
@@ -37,6 +41,7 @@ function writePassword() {
       return (pass);
     }
 
+    // // creates a randomized password of only special characters that meets the char length
     specPass = function () {
       for (var i = 0; i <= char; i++) {
         pass = pass.padEnd(i, special[Math.floor(Math.random() * 29)]);
@@ -44,6 +49,7 @@ function writePassword() {
       return (pass);
     }
 
+    // concatenates numbers and lowercase letters and creates randomized password from the new array
     numLowPass = function () {
       var numLower = numList.concat(alpha);
       for (var i = 0; i <= char; i++) {
@@ -52,6 +58,7 @@ function writePassword() {
       return (pass);
     }
 
+    // concatenates numbers and uppercase letters and creates randomized password from the new array
     numUpPass = function () {
       var numUpper = numList.concat(upAlpha);
       for (var i = 0; i <= char; i++) {
@@ -60,6 +67,7 @@ function writePassword() {
       return (pass);
     }
 
+    // concatenates numbers and special characters and creates randomized password from the new array
     numSpecPass = function () {
       var numSpec = numList.concat(special);
       for (var i = 0; i <= char; i++) {
@@ -68,6 +76,7 @@ function writePassword() {
       return (pass);
     }
 
+    // concatenates lower and uppercase letters and creates randomized password from the new array
     lowUpPass = function () {
       var lowUp = alpha.concat(upAlpha);
       for (var i = 0; i <= char; i++) {
@@ -76,6 +85,7 @@ function writePassword() {
       return (pass);
     }
 
+    // concatenates lower and special characters and creates randomized password from the new array
     lowSpecPass = function () {
       var lowSpec = alpha.concat(special);
       for (var i = 0; i <= char; i++) {
@@ -84,6 +94,7 @@ function writePassword() {
       return (pass);
     }
 
+    // concatenates upper and special characters and creates randomized password from the new array
     upSpecPass = function () {
       var upSpec = upAlpha.concat(special);
       for (var i = 0; i <= char; i++) {
@@ -92,6 +103,7 @@ function writePassword() {
       return (pass);
     }
 
+    // concatenates numbers, lower, and uppercase letters and creates randomized password from the new array
     numLowUpPass = function () {
       var numLowUp = numList.concat(alpha, upAlpha);
       for (var i = 0; i <= char; i++) {
@@ -100,6 +112,7 @@ function writePassword() {
       return (pass);
     }
 
+    // concatenates numbers, lowercase, and special characters and creates randomized password from the new array
     numLowSpecPass = function () {
       var numLowSpec = numList.concat(alpha, special);
       for (var i = 0; i <= char; i++) {
@@ -108,6 +121,7 @@ function writePassword() {
       return (pass);
     }
 
+    // concatenates numbers, uppercase letters, and special characters and creates randomized password from the new array
     numUpSpecPass = function () {
       var numUpSpec = numList.concat(upAlpha, special);
       for (var i = 0; i <= char; i++) {
@@ -116,6 +130,7 @@ function writePassword() {
       return (pass);
     }
 
+    // concatenates lower, uppercase letters, and special characters and creates randomized password from the new array
     lowUpSpecPass = function () {
       var lowUpSpec = alpha.concat(upAlpha, special);
       for (var i = 0; i <= char; i++) {
@@ -124,6 +139,7 @@ function writePassword() {
       return (pass);
     }
 
+    // concatenates numbers, lower, uppercase, and special characters and creates randomized password from the new array
     numLowUpSpecPass = function () {
       var numLowUpSpec = numList.concat(alpha, upAlpha, special);
       for (var i = 0; i <= char; i++) {
@@ -132,10 +148,11 @@ function writePassword() {
       return (pass);
     }
 
+    // Asks for password length
     charPrompt = function () {
       var char = prompt("How many characters would you like your password to contain?");
 
-      // Checking if input is an integer between 7 and 129
+      // Checking if input is an integer between 7 and 129 (cannot be a character or floating point)
       if (char % parseInt(char) !== 0) {
         alert("Input must be an integer.");
         return;
@@ -149,27 +166,30 @@ function writePassword() {
       return (char);
     }
 
+    // Asks to confirm including lowercase letters
     askLower = function () {
       var lower = confirm("Would you like to include lowercase characters?");
       return (lower);
     }
 
+    // Asks to confirm including uppercase letters
     askUpper = function () {
       var upper = confirm("Would you like to include uppercase characters?");
       return (upper);
     }
-
+    // Asks to confirm including numerals
     askNum = function () {
       var numeric = confirm("Would you like to include numeric characters?");
       return (numeric);
     }
 
+    // Asks to confirm including special characters
     askSpec = function () {
       var spec = confirm("Would you like to include special characters?");
       return (spec);
     }
 
-    // Checks if alpha array elements are included in pass
+    // Checks if alpha array elements (lowercase letters) are included in pass
     checkAlpha = function () {
       var bool = "";
       for (var i = 0; i < char; i++) {
@@ -184,7 +204,7 @@ function writePassword() {
       }
     }
 
-    // Checks if upAlpha array elements are included in pass
+    // Checks if upAlpha array elements (uppercase letters) are included in pass
     checkUpAlpha = function () {
       var bool = "";
       for (var i = 0; i < char; i++) {
@@ -199,7 +219,7 @@ function writePassword() {
       }
     }
 
-    // Checks if numList array elements are included in pass
+    // Checks if numList array elements (numerals) are included in pass
     checkNumList = function () {
       var bool = "";
       for (var i = 0; i < char; i++) {
@@ -214,7 +234,7 @@ function writePassword() {
       }
     }
 
-    // Checks if special array elements are included in pass
+    // Checks if special array elements (special characters) are included in pass
     checkSpecial = function () {
       var bool = "";
       for (var i = 0; i < char; i++) {
@@ -229,18 +249,25 @@ function writePassword() {
       }
     }
 
+    // depending on confirm inputs, compiles password and checks if password meets all criteria. If not, loops until the password meets the criteria.
     runChecks = function() {
+      // starts with failure state
       if (lower == false && upper == false && numeric == false && spec == false) {
         alert("Password must contain at least one type of character.");
         return("Try again");
+        // all lowercase password
       } else if (lower == true && upper == false && numeric == false && spec == false) {
         return (lowerPass());
+        // all uppercase password
       } else if (lower == false && upper == true && numeric == false && spec == false) {
         return (upperPass());
+        // all numeral password
       } else if (lower == false && upper == false && numeric == true && spec == false) {
         return (numPass());
+        // all special characters password
       } else if (lower == false && upper == false && numeric == false && spec == true) {
         return (specPass());
+        // lowercase and uppercase password
       } else if (lower == true && upper == true && numeric == false && spec == false) {
         do {
           pass = "";
@@ -249,6 +276,7 @@ function writePassword() {
           var chUpAl = checkUpAlpha();
         } while (chAl === false || chUpAl === false);
         return(pass);
+        // lowercase and numeral password
       } else if (lower == true && upper == false && numeric == true && spec == false) {
         do {
           pass = "";
@@ -260,6 +288,7 @@ function writePassword() {
           console.log(chNum);
         } while (chAl === false || chNum === false);
         return(pass);
+        // lowercase and special characters password
       } else if (lower == true && upper == false && numeric == false && spec == true) {
         do {
           pass = "";
@@ -271,6 +300,7 @@ function writePassword() {
           console.log(chSp);
         } while (chAl === false || chSp === false);
         return(pass);
+        // uppercase and numeral password
       } else if (lower == false && upper == true && numeric == true && spec == false) {
         do {
           pass = "";
@@ -282,6 +312,7 @@ function writePassword() {
           console.log(chNum);
         } while (chUpAl === false || chNum === false);
         return(pass);
+        // uppercase and special characters password
       } else if (lower == false && upper == true && numeric == false && spec == true) {
         do {
           pass = "";
@@ -293,6 +324,7 @@ function writePassword() {
           console.log(chSp);
         } while (chUpAl === false || chSp === false);
         return(pass);
+        // numeral and special characters password
       } else if (lower == false && upper == false && numeric == true && spec == true) {
         do {
           pass = "";
@@ -304,6 +336,7 @@ function writePassword() {
           console.log(chSp);
         } while (chNum === false || chSp === false);
         return(pass);
+        // lowercase, uppercase, and numeric password
       } else if (lower == true && upper == true && numeric == true && spec == false) {
         do {
           pass = "";
@@ -317,6 +350,7 @@ function writePassword() {
           console.log(chNum);
         } while (chAl === false || chUpAl === false || chNum === false);
         return(pass);
+        // lowercase, uppercase, and special characters password
       } else if (lower == true && upper == true && numeric == false && spec == true) {
         do {
           pass = "";
@@ -330,6 +364,7 @@ function writePassword() {
           console.log(chSp);
         } while (chAl === false || chUpAl === false || chSp === false);
         return(pass);
+        // lowercase, numeric, and special characters password
       } else if (lower == true && upper == false && numeric == true && spec == true) {
         do {
           pass = "";
@@ -343,6 +378,7 @@ function writePassword() {
           console.log(chSp);
         } while (chAl === false || chNum === false || chSp === false);
         return(pass);
+        // uppercase, numeric, and special characters password
       } else if (lower == false && upper == true && numeric == true && spec == true) {
         do {
           pass = "";
@@ -356,6 +392,7 @@ function writePassword() {
           console.log(chSp);
         } while (chUpAl === false || chNum === false || chSp === false);
         return(pass);
+        // all four elements password
       } else {
         do {
           pass = "";
@@ -386,76 +423,6 @@ function writePassword() {
     var spec = askSpec();
 
     pass = runChecks();
-
-
-    // TO DO: Debug all chars included
-    // experiment = function () {
-    //   var numLower = numList.concat(alpha);
-    //   for (var i = 0; i <= char; i++) {
-    //     pass = pass.padEnd(i, numLower[Math.floor(Math.random() * 36)]);
-    //   }
-    //   // console.log(alpha.some(pass));
-    //   // console.log(numList.some(pass));
-    //   // console.log(alpha.some(pass));
-    //   return (pass);
-    // }
-
-    // exp2 = function () {
-    //   var numLowUpSpec = numList.concat(alpha, upAlpha, special);
-    //   for (var i = 0; i <= char; i++) {
-    //     pass = pass.padEnd(i, numLowUpSpec[Math.floor(Math.random() * 91)]);
-    //   }
-    //   return (pass);
-    // }
-
-    // exp3 = function () {
-    //   var check = pass;
-    //   return (check);
-    // }
-
-    // exp4 = function (array, pass) {
-    //   return array.some(function (check) {
-    //     console.log(pass, check);
-    //     return (pass.substring(0) === check);
-    //   });
-    // }
-
-
-
-    // exp2();
-    // var checking = checkSpecial();
-    // console.log(checking);
-
-    // exp2();
-    // var test = exp4(special, pass);
-    // if(test === true) {
-    //   console.log("Yes");
-    // } else if(test === false) {
-    //   console.log("No");
-    // } else {
-    //   console.log("Problem");
-    // };
-    // console.log(pass.substring(0));
-
-    // if (alpha.some(exp2) === false || numList.some(exp2) === false || upAlpha.some(exp2) === false || special.some(exp2) === false) {
-    //   exp2();
-    // };
-
-    // do {
-    //   exp2();
-    //   console.log(pass);
-    // } while (alpha.some(exp2) === false || numList.some(exp2) === false || upAlpha.some(exp2) === false || special.some(exp2) === false);
-
-
-    // exp2();
-    // console.log(pass);
-    // console.log(alpha.some(exp3));
-    // console.log(numList.some(exp3));
-    // console.log(upAlpha.some(exp3));
-    // console.log(special.some(exp3));
-
-
-    // console.log(numList.some(experiment));
 
     return (pass);
   }
